@@ -1,6 +1,6 @@
 package linkedList;
 
-public class LengthOfALinkedList {
+public class LengthofaLinkedList {
     public int getCount(Node head) {
         // code here
         int count = 0;

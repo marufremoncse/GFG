@@ -1,6 +1,6 @@
 package linkedList;
 
-public class MiddleOfALinkedList {
+public class MiddleofaLinkedList {
     int getMiddle(Node head) {
         // Your code here.
         Node firstPointer = new Node(0);
