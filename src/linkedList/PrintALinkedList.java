@@ -16,5 +16,6 @@ public class PrintALinkedList {
             System.out.print(head.data + " ");
             head = head.next;
         }
+        System.out.println();
     }
 }
