@@ -1,4 +1,4 @@
-package sorting;
+package string;
 
 public class AnagramPalindrome {
     int isPossible (String S)
