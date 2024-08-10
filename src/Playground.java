@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Playground {
@@ -35,6 +36,35 @@ public class Playground {
         return count;
     }
 
+    public static int TotalPairs(int[] nums, int k) {
+        // Code here
+        List<Integer> ls = new ArrayList<Integer>();
+        int count = 0;
+        for(int i:nums){
+            ls.add(i);
+        }
+
+        Iterator<Integer> it = ls.iterator();
+        int nextToRemove = -1;
+
+        while(it.hasNext()){
+            int i = it.next();
+
+            if(ls.contains(k+i)){
+                count++;
+
+                it.remove();
+
+                nextToRemove = k+i;
+            } else if(i==nextToRemove){
+                it.remove();
+                nextToRemove = -1;
+            }
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) {
         List<Integer> ls = new ArrayList<>();
         ls.add(1);
@@ -42,7 +72,8 @@ public class Playground {
         ls.add(4);
 
         //System.out.println(remove_duplicate(ls));
-        int[] arr = {6,4,9,7,8};
-        System.out.println(findNumberOfTriangles(arr, 5));
+        int[] arr = {1, 5, 4, 1, 2};
+        //System.out.println(findNumberOfTriangles(arr, 5));
+        System.out.println(TotalPairs(arr, 0));
     }
 }
