@@ -2,7 +2,7 @@ package mathematical;
 
 import java.util.ArrayList;
 
-public class MultiplicationTable {
+public class PrintTable {
     static ArrayList<Integer> getTable(int N){
         // code here
         ArrayList<Integer> ls = new ArrayList<>(10);
