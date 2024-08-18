@@ -75,5 +75,6 @@ public class Playground {
         int[] arr = {1, 5, 4, 1, 2};
         //System.out.println(findNumberOfTriangles(arr, 5));
         System.out.println(TotalPairs(arr, 0));
+        System.out.println("Hello World");
     }
 }
