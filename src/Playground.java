@@ -65,6 +65,44 @@ public class Playground {
         return count;
     }
 
+    static class Node
+    {
+        int data;
+        Node next;
+        Node(int d) {data = d; next = null; }
+    }
+
+    static Node sortedInsert(Node head1, int key) {
+        // Add your code here.
+
+        Node insertNode = new Node(key);
+
+        if(head1==null){
+            return insertNode;
+        } else if(head1.data>=key){
+            insertNode.next = head1;
+            return insertNode;
+        }
+
+        Node temp = head1;
+
+        while(temp!=null){
+            if(temp.data<=key){
+                if(temp.next!=null && temp.next.data>=key){
+                    insertNode.next = temp.next;
+                    temp.next = insertNode;
+                } else if(temp.next==null){
+                    temp.next = insertNode;
+                }
+                break;
+            }
+            temp = temp.next;
+        }
+
+
+        return head1;
+    }
+
     public static void main(String[] args) {
         List<Integer> ls = new ArrayList<>();
         ls.add(1);
@@ -76,5 +114,16 @@ public class Playground {
         //System.out.println(findNumberOfTriangles(arr, 5));
         System.out.println(TotalPairs(arr, 0));
         System.out.println("Hello World");
+
+        Node f = new Node(50);
+        Node s = new Node(100);
+        f.next = s;
+
+        Node res = sortedInsert(f, 175);
+
+        while(res!=null){
+            System.out.println(res.data);
+            res = res.next;
+        }
     }
 }
