@@ -22,4 +22,25 @@ public class SmallestPositiveMissingNumber {
 
         return ans;
     }
+
+    public int missingNumber(int[] arr) {
+        int l = arr.length;
+        int[] indexArray = new int[l+1];
+
+        for(int i=0;i<l;i++){
+            if(arr[i]>0 && arr[i]<=l){
+                indexArray[arr[i]-1] = 1;
+            }
+        }
+
+        int minimumPositive = -1;
+
+        for(int i=0;i<=l;i++){
+            if(indexArray[i]==0){
+                minimumPositive = i+1;
+                break;
+            }
+        }
+        return minimumPositive;
+    }
 }
