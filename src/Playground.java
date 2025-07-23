@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -125,5 +126,7 @@ public class Playground {
             System.out.println(res.data);
             res = res.next;
         }
+
+        Arrays.sort();
     }
 }
