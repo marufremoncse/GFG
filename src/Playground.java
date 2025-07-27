@@ -127,6 +127,24 @@ public class Playground {
             res = res.next;
         }
 
-        Arrays.sort();
+        Arrays.sort(arr);
+
+        pattern(10);
     }
+    public static ArrayList<Integer> pattern(int n) {
+        // code here
+        ArrayList<Integer> ls = new ArrayList<>();
+        pattern(n, ls);
+        return ls;
+    }
+    public static void pattern(int n, ArrayList<Integer> ls) {
+        if(n<=0){
+            ls.add(n);
+            return;
+        }
+        ls.add(n);
+        pattern(n-5, ls);
+        ls.add(n);
+    }
+
 }
