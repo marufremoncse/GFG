@@ -1,27 +1,21 @@
 package mathematical;
 
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 public class PerfectNumbers {
-    static int isPerfectNumber(long N) {
-        // code here
-        long sum = 0;
-        Set<Long> hs = new HashSet<>();
-        for(long i=1;i*i<=N;i++){
-            if(N%i==0){
+    static boolean isPerfect(int n) {
+        HashSet<Integer> hs = new HashSet<>();
+
+        for(int i=1;i*i<n;i++){
+            if(n%i==0){
                 hs.add(i);
-                hs.add(N/i);
+                hs.add(n/i);
             }
         }
 
-        Iterator it = hs.iterator();
+        int sum = 0;
+        sum = hs.stream().mapToInt(Integer::intValue).sum();
 
-        while(it.hasNext()){
-            sum+=(long)it.next();
-        }
-
-        return (sum-N)==N? 1 : 0;
+        return sum - n == n;
     }
 }
